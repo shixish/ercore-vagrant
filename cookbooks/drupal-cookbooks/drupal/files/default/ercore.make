@@ -40,12 +40,36 @@ projects[views][subdir] = contrib
 projects[features][subdir] = contrib
 projects[diff][subdir] = contrib
 
+; ER Core Dependancies
+; --------
+projects[bundle_copy][subdir] = contrib
+projects[computed_field][subdir] = contrib
+projects[entity][subdir] = contrib
+projects[entityreference][subdir] = contrib
+projects[entityreference_prepopulate][subdir] = contrib
+projects[field_group][subdir] = contrib
+projects[markup][subdir] = contrib
+projects[geophp][subdir] = contrib
+projects[geofield][subdir] = contrib
+projects[flag][subdir] = contrib
+projects[views_php][subdir] = contrib
+projects[select_or_other][subdir] = contrib
+projects[openlayers][subdir] = contrib
+projects[views_data_export][subdir] = contrib
+projects[libraries][subdir] = contrib
+projects[rules][subdir] = contrib
+projects[proj4js][subdir] = contrib
+projects[nodeaccess_userreference][subdir] = contrib
+projects[link][subdir] = contrib
+projects[field_permissions][subdir] = contrib
+projects[date][subdir] = contrib
+
 ; ER Core Module (sandbox)
 ; --------
 projects[er][type] = module
 projects[er][download][type] = git
-projects[er][download][branch] = "7.x-1.x"
-projects[er][download][url] = http://drupalcode.org/sandbox/shixish/1837936.git
+projects[er][download][branch] = "7.x-1.x-dev"
+projects[er][download][url] = http://git.drupal.org/sandbox/shixish/1837936.git
 ; projects[er][download][revision] = a1cc04da3c1dd957e6808b7e6a381c5970904863
   
 

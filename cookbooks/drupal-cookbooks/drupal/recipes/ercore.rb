@@ -27,7 +27,7 @@ bash "install-default-drupal-makefile" do
   code <<-EOH
 (mkdir -p /vagrant/public/drupal.vbox.local)
   EOH
-  not_if { File.exists?("/vagrant/public/drupal.vbox.local/ercore.make") }
+  not_if { File.exists?("/vagrant/public/drupal.vbox.local") }
 end
 
 # Copy make file to site.
