@@ -32,8 +32,8 @@ Vagrant::Config.run do |config|
 
     # This role represents our default Drupal development stack.
     chef.add_role("drupal_lamp_varnish_dev")
-    # Install an example D7 install at drupal.vbox.local.
-    chef.add_recipe('drupal::example')
+    # Install an ER Core D7 install at drupal.vbox.local.
+    chef.add_recipe('drupal::ercore')
     # This is basically the Vagrant role.
     chef.json.merge!({
         :www_root => '/vagrant/public',
