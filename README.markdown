@@ -16,6 +16,8 @@ VirtualBox Vagrant Chef Drupal install
 
 That's it, files in "public" are served here : [http://drupal.vbox.local/](http://drupal.vbox.local/)
 
+Edit: You will need to go directly to [http://drupal.vbox.local/install.php](http://drupal.vbox.local/install.php) and follow through with drupal's installation procedure the first time.
+
 To connect to the console of you instance:
     `vagrant ssh`
 

@@ -21,8 +21,8 @@ Vagrant::Config.run do |config|
   # Network setting for Vagrant >= 0.90
   config.vm.network :hostonly, "33.33.33.10"
 
-  config.vm.share_folder("v-root", "/vagrant", ".")
-  # config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true)
+  config.vm.share_folder("vagrant-root", "/vagrant", ".")
+  # config.vm.share_folder("vagrant-root", "/vagrant", ".", :nfs => true)
   # config.vm.share_folder("v-apt", "/var/cache/apt", "~/temp/vagrant_aptcache/apt", :nfs => true)
 
   config.vm.provision :chef_solo do |chef|

@@ -51,9 +51,8 @@ cookbook_file "/vagrant/public/drupal.vbox.local/www/sites/default/settings.php"
   notifies :restart, resources("service[varnish]"), :delayed
 end
 
-# TODO: Break this out into a vagrant only cookbook? (name: "drupal-vagrant")
-# create a drupal db
-execute "enable-drupal-modules" do
-  command "cd /vagrant/public/drupal.vbox.local; drush en admin_menu admin_menu_toolbar er -y; drush dis toolbar -y"
-  action :run
-end
+# This doesn't work because you have to run install.php first.
+# execute "enable-drupal-modules" do
+#   command "cd /vagrant/public/drupal.vbox.local/www; drush en admin_menu admin_menu_toolbar er -y; drush dis toolbar -y"
+#   action :run
+# end
