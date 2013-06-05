@@ -1,0 +1,3 @@
+[submodule "cookbooks/site-cookbooks/unzip"]
+	path = cookbooks/site-cookbooks/unzip
+	url = https://github.com/wharton/chef-unzip.git
