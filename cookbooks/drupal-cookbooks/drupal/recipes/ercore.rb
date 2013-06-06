@@ -52,12 +52,16 @@ cookbook_file "/vagrant/public/drupal.vbox.local/www/sites/default/settings.php"
 end
 
 # pull in phpexcel library from git, modify the changelog to show the right version number.
-execute "add-phpexcel-library" do
-  command "cd /vagrant/public/drupal.vbox.local/www/sites/all/libraries; "
-		+ "git clone git://github.com/PHPOffice/PHPExcel.git PHPExcel; git checkout 1.7.9; "
-		+ "cd PHPExcel; cp changelog.txt changelog.txt.bak; "
-		+ "sed -e /##VERSION##/1.7.9/g changelog.txt.bak > changelog.txt"
-  action :run
+bash "add-phpexcel-library" do
+  code <<-EOH
+cd /vagrant/public/drupal.vbox.local/www/sites/all/libraries
+git clone git://github.com/PHPOffice/PHPExcel.git PHPExcel
+cd PHPExcel
+git checkout 1.7.9
+cp changelog.txt changelog.txt.bak
+sed -e 's/##VERSION##/1.7.9/g' changelog.txt.bak > changelog.txt
+  EOH
+  not_if { File.exists?("/vagrant/public/drupal.vbox.local/www/sites/all/libraries/PHPExcel") }
 end
 
 # This doesn't work because you have to run install.php first.
