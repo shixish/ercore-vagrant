@@ -16,9 +16,9 @@ VirtualBox Vagrant Chef Drupal install
 
 That's it, files in "public" are served here : [http://drupal.vbox.local/](http://drupal.vbox.local/)
 
-Edit: You will need to go directly to [http://drupal.vbox.local/install.php](http://drupal.vbox.local/install.php) and follow through with drupal's installation procedure the first time.
+Notice: You will need to go directly to [http://drupal.vbox.local/install.php](http://drupal.vbox.local/install.php) and follow through with drupal's installation procedure the first time.
 
-To connect to the console of you instance:
+To connect to the console of your instance:
     `vagrant ssh`
 
 --------
@@ -28,6 +28,19 @@ You can add `XDEBUG_PROFILE` to your GET parameter to generate an xdebug profile
 You can then investigate at [http://dev-site.vbox.local/webgrind/](http://dev-site.vbox.local/webgrind/)
 
 Phpmyadmin is available [http://dev-site.vbox.local/phpmyadmin/](http://dev-site.vbox.local/phpmyadmin/). User `myadmin`, Password `myadmin`
+	
+# ER Core additional steps
+The installer brings in ER Core using git, but it does so in "read-only" mode. You will need to modify the git config file if you wish to push to the repository.
+
+You can access the file at:	`public/drupal.vbox.local/www/sites/all/modules/er/.git/config`
+
+You will need to modify line 9, change the URL from:
+
+	http://git.drupal.org/sandbox/shixish/1837936.git
+	
+to:
+
+	[YOUR USERNAME]@git.drupal.org:sandbox/shixish/1837936.git
 
 ## Other projects of interest
 
