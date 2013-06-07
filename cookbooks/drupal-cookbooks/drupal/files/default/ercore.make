@@ -63,7 +63,6 @@ projects[nodeaccess_userreference][subdir] = contrib
 projects[link][subdir] = contrib
 projects[field_permissions][subdir] = contrib
 projects[date][subdir] = contrib
-projects[phpexcel][subdir] = contrib
 
 ; ER Core Module (sandbox)
 ; --------
