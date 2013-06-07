@@ -1,0 +1,14 @@
+default:
+  
+  filters:
+    tags: ~@ignore
+    
+  extensions:
+    Behat\MinkExtension\Extension:
+      show_cmd: firefox %s
+      base_url:  http://drupal.vbox.local/
+      goutte: ~
+      selenium2: ~
+    Phase2\Behat\DrupalExtension\Extension:
+      drupal_root: /path/to/drupal
+      base_url: http://drupal.vbox.local/

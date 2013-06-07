@@ -64,6 +64,13 @@ sed -e 's/##VERSION##/1.7.9/g' changelog.txt.bak > changelog.txt
   not_if { File.exists?("/vagrant/public/drupal.vbox.local/www/sites/all/libraries/PHPExcel") }
 end
 
+# Run composer install, this will install behat, mink, and behat drupal-extension
+execute "run-composer-install" do
+  command "cd /vagrant/; composer install"
+  action :run
+  not_if { File.exists?("/vagrant/vendor") }
+end
+
 # This doesn't work because you have to run install.php first.
 # execute "enable-drupal-modules" do
 #   command "cd /vagrant/public/drupal.vbox.local/www; drush en admin_menu admin_menu_toolbar er -y; drush dis toolbar -y"

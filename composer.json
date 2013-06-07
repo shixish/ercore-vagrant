@@ -1,0 +1,17 @@
+{
+	"require": {
+		"behat/behat": "2.4.*@stable",
+		"behat/mink-extension": "*",
+		"phase2/drupal-extension": "dev-master"
+	},
+	"minimum-stability": "dev",
+	"config": {
+		"bin/dir": "bin/"
+	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/phase2/behat-drupal-extension"
+		}
+	]
+}
