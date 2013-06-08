@@ -1,5 +1,7 @@
 default:
-  
+  context:
+    class: Phase2\Behat\DrupalExtension\Context\DrupalMinkContext
+
   filters:
     tags: ~@ignore
     
