@@ -17,7 +17,7 @@ end
 # create a drupal db
 execute "add-drupal-db" do
   command "/usr/bin/mysql -u root -p#{node[:mysql][:server_root_password]} -e \"" +
-      "CREATE DATABASE drupal;\""
+      "CREATE DATABASE IF NOT EXISTS drupal;\""
   action :run
   ignore_failure true
 end
