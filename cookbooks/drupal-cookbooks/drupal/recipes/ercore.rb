@@ -71,6 +71,13 @@ execute "run-composer-install" do
   not_if { File.exists?("/vagrant/vendor") }
 end
 
+# Run composer install, this will install behat, mink, and behat drupal-extension
+execute "symlink-behat" do
+  command "ln -s /vagrant/vendor/behat/behat/bin/behat /usr/local/bin/behat"
+  action :run
+  not_if { File.exists?("/usr/local/bin/behat") }
+end
+
 # This doesn't work because you have to run install.php first.
 # execute "enable-drupal-modules" do
 #   command "cd /vagrant/public/drupal.vbox.local/www; drush en admin_menu admin_menu_toolbar er -y; drush dis toolbar -y"

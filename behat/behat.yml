@@ -12,5 +12,5 @@ default:
       goutte: ~
       selenium2: ~
     Phase2\Behat\DrupalExtension\Extension:
-      drupal_root: /path/to/drupal
+      drupal_root: /vagrant/public/drupal.vbox.local/www/
       base_url: http://drupal.vbox.local/

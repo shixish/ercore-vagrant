@@ -31,6 +31,10 @@ Vagrant::Config.run do |config|
     # This path will be expanded relative to the project directory
     chef.cookbooks_path = ["cookbooks/site-cookbooks", "cookbooks/drupal-cookbooks"]
     chef.roles_path = "roles"
+	
+	# Use this to update php to 5.4
+	chef.add_recipe('dotdeb')
+	chef.add_recipe("dotdeb::php54")
 
     # This role represents our default Drupal development stack.
     chef.add_role("drupal_lamp_varnish_dev")

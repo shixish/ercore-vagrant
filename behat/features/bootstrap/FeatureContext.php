@@ -12,4 +12,3 @@ class FeatureContext extends MinkContext
         $this->getSession()->wait($seconds * 1000);
     }
 }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
