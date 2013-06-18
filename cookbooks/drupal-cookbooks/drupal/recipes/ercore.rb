@@ -78,16 +78,6 @@ execute "symlink-behat" do
   not_if { File.exists?("/usr/local/bin/behat") }
 end
 
-# Install and run selenium
-execute "symlink-behat" do
-  command "ln -s /vagrant/vendor/behat/behat/bin/behat /usr/local/bin/behat"
-  action :run
-  not_if { File.exists?("/usr/local/bin/behat") }
-end
-
-wget http://selenium.googlecode.com/files/selenium-server-standalone-2.31.0.jar
-java -jar selenium-server-standalone-2.31.0.jar 
-
 # This doesn't work because you have to run install.php first.
 # execute "enable-drupal-modules" do
 #   command "cd /vagrant/public/drupal.vbox.local/www; drush en admin_menu admin_menu_toolbar er -y; drush dis toolbar -y"

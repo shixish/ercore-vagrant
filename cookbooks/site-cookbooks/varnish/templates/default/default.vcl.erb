@@ -6,6 +6,9 @@
 backend default {
         .host = "<%= node[:varnish][:default_backend_host] %>";
         .port = "<%= node[:varnish][:default_backend_port] %>";
+        .connect_timeout = 300s;
+        .first_byte_timeout = 300s;
+        .between_bytes_timeout = 300s;
 }
 
 # This is a basic VCL configuration file for varnish.  See the vcl(7)
