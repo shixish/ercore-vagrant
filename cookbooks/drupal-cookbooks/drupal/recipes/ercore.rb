@@ -48,7 +48,7 @@ end
 
 cookbook_file "/vagrant/public/drupal.vbox.local/www/sites/default/settings.php" do
   source "settings.php"
-  notifies :restart, resources("service[varnish]"), :delayed
+#   notifies :restart, resources("service[varnish]"), :delayed
 end
 
 # pull in phpexcel library from git, modify the changelog to show the right version number.
