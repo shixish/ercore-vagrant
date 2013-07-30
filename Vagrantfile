@@ -33,6 +33,7 @@ Vagrant::Config.run do |config|
     chef.roles_path = "roles"
 	
 	# Use this to update php to 5.4
+	chef.add_recipe("unzip")
 	chef.add_recipe('dotdeb')
 	chef.add_recipe("dotdeb::php54")
 
@@ -40,7 +41,7 @@ Vagrant::Config.run do |config|
     chef.add_role("drupal_lamp_varnish_dev")
 	
 	# Install composer
-	chef.add_recipe("composer")
+	# chef.add_recipe("composer")
 	
     # Install an ER Core D7 install at drupal.vbox.local.
     chef.add_recipe('drupal::ercore')

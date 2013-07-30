@@ -1,8 +1,8 @@
 # Deploy an example Drupal site.
 # TODO Move this to a definition with parameters.
-require_recipe "mysql"
-require_recipe "drush"
-require_recipe "drush_make"
+include_recipe "mysql"
+include_recipe "drush"
+include_recipe "drush_make"
 
 # Add an admin user to mysql
 execute "add-admin-user" do
@@ -65,18 +65,18 @@ sed -e 's/##VERSION##/1.7.9/g' changelog.txt.bak > changelog.txt
 end
 
 # Run composer install, this will install behat, mink, and behat drupal-extension
-execute "run-composer-install" do
-  command "cd /vagrant/; composer install"
-  action :run
-  not_if { File.exists?("/vagrant/vendor") }
-end
+# execute "run-composer-install" do
+#   command "cd /vagrant/; composer install"
+#   action :run
+#   not_if { File.exists?("/vagrant/vendor") }
+# end
 
 # Create a symlink to the behat executible, making the program run anywhere.
-execute "symlink-behat" do
-  command "ln -s /vagrant/vendor/behat/behat/bin/behat /usr/local/bin/behat"
-  action :run
-  not_if { File.exists?("/usr/local/bin/behat") }
-end
+# execute "symlink-behat" do
+#   command "ln -s /vagrant/vendor/behat/behat/bin/behat /usr/local/bin/behat"
+#   action :run
+#   not_if { File.exists?("/usr/local/bin/behat") }
+# end
 
 # This doesn't work because you have to run install.php first.
 # execute "enable-drupal-modules" do
